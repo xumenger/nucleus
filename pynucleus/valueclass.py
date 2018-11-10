@@ -27,20 +27,17 @@ def valueclass(*members):
         for k in kwargs:
             if k not in members:
                 raise TypeError(("__init__() got an unexpected keyword " + "argument '{k}'").format(k = k))
-
     
     def value_eq(self, other):
         if not isinstance(other, type(self)):
             return False
         for m in members:
-            if slf.__dict__[m] != other.__dict__[m]:
+            if self.__dict__[m] != other.__dict__[m]:
                 return False
         return True
-
     
     def value_repr(self):
         return "{type}({args})".format(type = type(self).__name__, args = ", ".join(repr(self.__dict__[m]) for m in members))
-
 
     def ret(cl):
         cl.__init__ = value_init

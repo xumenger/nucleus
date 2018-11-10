@@ -69,6 +69,7 @@ def compile_call(expr, env, indent):
     else:
         return ("%s(%s)" % (fn_name, ", ".join(compile_expr(e, env, indent) for e in expr[2])))
 
+
 def compile_assignment(expr, env, indent):
     # TODO: check expr[1] compiles to a symbol
     # TODO: add symbol value to environment and check it later
@@ -86,6 +87,7 @@ def compile_function_def(expr, env, indent):
 
 js_keywords = ("for", )
 
+
 def mangle_symbol(sym):
     if sym in js_keywords:
         return sym + "__"
@@ -93,6 +95,7 @@ def mangle_symbol(sym):
         return "null"
     else:
         return sym
+
 
 def compile_expr(expr, env, indent):
     typ = expr[0]

@@ -10,6 +10,7 @@ def _scan(first_char, chars, allowed):
         ret += chars.move_next()
         p = chars.next
     return ret
+    
 
 def _scan_string(delim, chars):
     ret = ""

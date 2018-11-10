@@ -8,7 +8,8 @@ list5 = {:(a, b, c, d, e) pair(a, list4(b, c, d, e));};
 
 prepend = pair;
 
-append = {:(lst, item)
+append = 
+{:(lst, item)
     if(equals(lst, None),
     {
         list1(item);
@@ -18,7 +19,8 @@ append = {:(lst, item)
     });
 };
 
-for = {:(xs, fn)
+for = 
+{:(xs, fn)
     if(not(equals(xs, None)),
     {
         fn(first(xs));

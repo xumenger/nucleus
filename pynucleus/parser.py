@@ -33,7 +33,6 @@ class Parser:
         else:
             raise Exception("Unexpected token: " + str((typ, value)))
 
-
     def parameters_list(self):
         if self.tokens.next[0] != ":":
             return []
@@ -47,7 +46,6 @@ class Parser:
             if param[0] != "symbol":
                 raise Exception("Only symbols are allowed in function parameter lists." + " I found: " + str(param) + ".")
         return ret
-
     
     def multiple_expression(self, sep, end):
         ret = []

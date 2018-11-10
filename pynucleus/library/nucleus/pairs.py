@@ -1,5 +1,6 @@
 pairs = """
-pair = {:(f, s)
+pair = 
+{:(f, s)
     {:(which)
         if(equals(which, "f"),
         {f;},

@@ -18,3 +18,4 @@ def _strvalue(value):
 
 def print_(env, value):
     env.stdout.write("%s\n" % _strvalue(value))
+    return ("none", )
