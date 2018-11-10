@@ -7,7 +7,7 @@ $ chmod +x nucleus
 
 $ ./nucleus example.nl
 
-$ ./nucleus example.nl -o output.js
+$ ./nucleus example.nl -o example.js
 ```
 
 ## 语言的语法
