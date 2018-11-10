@@ -26,7 +26,7 @@ def _function_call(expr, env):
     fn = eval_expr(expr[1], env)
     args = list((eval_expr(a, env) for a in expr[2]))
     if fn[0] == "function":
-        param = fn[1]
+        params = fn[1]
         fail_if_wrong_number_of_args(expr[1], params, args)
         body = fn[2]
         fn_env = fn[3]
