@@ -21,6 +21,7 @@ def fail_if_wrong_number_of_args(fn_name, params, args):
     if len(params) != len(args):
         raise Exception(("%d arguments passed to function %s, but it " + "requires %d arguments.") % (len(args), fn_name, len(params)))
 
+
 def _function_call(expr, env):
     fn = eval_expr(expr[1], env)
     args = list((eval_expr(a, env) for a in expr[2]))
@@ -40,6 +41,7 @@ def _function_call(expr, env):
         return fn[1](env, *args)
     else:
         raise Exception("Attempted to call something that is not a function: %s" % str(fn))
+
 
 def eval_expr(expr, env):
     typ = expr[0]

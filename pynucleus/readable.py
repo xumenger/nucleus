@@ -1,5 +1,5 @@
 class Readable:
 
     @staticmethod
-    def requred_members():
+    def required_members():
         return ["read"]

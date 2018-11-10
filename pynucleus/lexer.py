@@ -36,7 +36,7 @@ def lex(chars_iter):
             yield ("string", _scan_string(c, chars))
         elif re.match("[.0-9]", c):
             yield ("number", _scan(c, chars, "[.0-9]"))
-        elif rem.match("[_a-zA-Z]", c):
+        elif re.match("[_a-zA-Z]", c):
             yield ("symbol", _scan(c, chars, "[_a-zA-Z0-9]"))
         elif c == "\t":
             raise Exception("Tab characters are not allowed in Nucleus.")

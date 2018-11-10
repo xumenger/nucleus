@@ -21,7 +21,7 @@ append = {:(lst, item)
 for = {:(xs, fn)
     if(not(equals(xs, None)),
     {
-        fn(first(xs);
+        fn(first(xs));
         for(second(xs), fn);
     },
     {
