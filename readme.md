@@ -5,6 +5,7 @@
 ```
 $ chmod +x nucleus
 $ ./nucleus example.nl
+$ ./nucleus -o output example.nl
 ```
 
 ## 语言的语法
