@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import argparse
+import sys
+
+from pynucleus.repl import repl
+from pynucleus.run import run
+from pynucleus.compile_ import compile_
+
+
+def main(argv, stdin, stdout, stderr):
+    if len(argv) == 1:
+        repl(stdin, stdout, stderr)
+    else:
+        parser = argparse.ArgumentParser(description = "Nucleus Elementary Learning Language")
+        parser.add_argument("-o", "--output", help = "Compile (as JavaScript) to this filename.")
+        parser.add_argument("filename", help = "The program to run or compile.")
+        args = parser.parse_args(argv[1:])
+        if args.output is not None:
+            compile_(args.output, args.filename)
+        else:
+            run(args.filename, stdin, stdout, stderr)
+    return 0
+
+
+if "__main__" == "__name__":
+    sys.exit(main(sys.argv, sys.stdin, sys.stdout, sys.stderr))
