@@ -13,6 +13,37 @@
 >>> 
 ```
 
+### 判断与循环
+
+```
+>>> if(equals(1, 1),
+... {
+...     print("Hello!");
+... },
+... {
+...     print("World!");
+... });
+Hello!
+None
+>>> for(chars_in("Hello"),
+... {:(ch)
+...     print(ch);
+...     print(ch);
+... });
+H
+H
+e
+e
+l
+l
+l
+l
+o
+o
+None
+>>> 
+```
+
 ### 函数调用
 
 ```
@@ -116,5 +147,44 @@ I am f2
 I am f1
 None
 >>> 
+```
+
+### 类和对象
+
+利用函数、闭包……的特性来构造对象的语法
+
+```
+>>> person = {
+...     {
+...         age = 0;
+...         {:(method_name)
+...             if(equals("add", method_name),
+...             {{:(num)
+...                 set("age", age + num);
+...             }},
+...             {
+...                 if(equals("sub", method_name),
+...                 {{:(num)
+...                     set("age", age - num);
+...                 }},
+...                 {
+...                     if(equals("wrong", method_name),
+...                         {bal;},
+...                         {print("Unknown method!");}
+...                     );
+...                 });
+...             })
+...         };
+...     }();
+... };
+<function>
+>>> p1 = person();
+<function>
+>>> p2 = person();
+<function>
+>>> p1("add")(1);
+1
+>>> p2("add")(10);
+10
 ```
 
