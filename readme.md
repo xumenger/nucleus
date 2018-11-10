@@ -4,8 +4,10 @@
 
 ```
 $ chmod +x nucleus
+
 $ ./nucleus example.nl
-$ ./nucleus -o output example.nl
+
+$ ./nucleus example.nl -o output.js
 ```
 
 ## 语言的语法
