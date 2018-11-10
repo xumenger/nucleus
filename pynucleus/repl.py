@@ -2,7 +2,7 @@ import pynucleus.library
 
 from pynucleus.chars_in_file import chars_in_file
 from pynucleus.env import Env
-from pynucleus.eval_ import eval_list
+from pynucleus.eval_ import eval_iter
 from pynucleus.lexer import lex
 from pynucleus.parser import parse
 
@@ -12,7 +12,7 @@ def stringify(value):
     if typ == "number":
         ret = str(value[1])
         if ret.endswith(".0"):
-            ret = ret[:2]
+            ret = ret[:-2]
         return ret
     elif typ == "string":
         return repr(value[1])
@@ -58,7 +58,7 @@ def repl(stdin, stdout, stderr):
     while True:
         try:
             p = Prompt(stdout)
-            for value in eval_list(parse(lex(p.handle_chars(chars_in_file(stdin)))), env):
+            for value in eval_iter(parse(lex(p.handle_chars(chars_in_file(stdin)))), env):
                 p.value(value)
             break
         except Exception as e:
